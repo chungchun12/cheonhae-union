@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>천해연합 헌법 (天海聯合 憲法)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @media border-box {
+            *, ::before, ::after { box-sizing: border-box; }
+        }
+        body {
+            font-family: 'Noto Serif KR', serif;
+            background-color: #e5e7eb;
+            color: #111827;
+            padding: 3rem 1rem;
+        }
+        .constitution-paper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 4.5rem 6rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid #d1d5db;
+            position: relative;
+            overflow: hidden;
+        }
+        .constitution-paper::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 12px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            font-size: 7rem;
+            font-weight: 700;
+            color: rgba(30, 58, 138, 0.03);
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 0;
+        }
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+        .main-title-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .main-title-kr {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.1em;
+        }
+        .main-title-cn {
+            font-size: 2rem;
+            color: #374151;
+            letter-spacing: 0.4em;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        .subtitle {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #4b5563;
+            letter-spacing: 0.05em;
+        }
+        .preamble-box {
+            background-color: #f9fafb;
+            border: 1px solid #f3f4f6;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.9;
+            text-align: justify;
+            border-radius: 4px;
+        }
+        .chapter-title {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+            margin: 2.5rem 0 1.2rem 0;
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+        .article {
+            margin-bottom: 1.6rem;
+            line-height: 1.7;
+        }
+        .article-head {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+        }
+        .clause {
+            display: block;
+            margin-left: 1.4rem;
+            text-indent: -1.4rem;
+            margin-bottom: 0.3rem;
+        }
+        .signature-section {
+            margin-top: 6rem;
+            text-align: center;
+        }
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .sig-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+        .sig-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sig-seal {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #dc2626;
+            color: #dc2626;
+            border-radius: 4px;
+            line-height: 46px;
+            text-align: center;
+            font-weight: 700;
+            margin-left: 0.8rem;
+            font-size: 1.1rem;
+            transform: none; 
+        }
+        @media print {
+            body { background: none; padding: 0; }
+            .constitution-paper { 
+                box-shadow: none; 
+                border: none; 
+                width: 100%; 
+                max-width: none; 
+                margin: 0; 
+                padding: 1.5cm 2cm; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="constitution-paper">
+    <div class="watermark">CHEONHAE UNION</div>
+    
+    <div class="content-layer">
+        <!-- 타이틀 섹션 -->
+        <header class="main-title-container">
+            <h1 class="main-title-kr">천해연합 헌법</h1>
+            <div class="main-title-cn">天海聯合 憲法</div>
+            <div class="subtitle">Cheonhae Union</div>
+            <div class="text-right text-sm text-gray-500 font-sans mt-4">
+                [시행 2026. 2. 26.] [제정 2026. 2. 26.]
+            </div>
+        </header>
+
+        <!-- 전문 -->
+        <section>
+            <div class="preamble-box">
+                <p class="text-center font-bold text-xl mb-4">【 전 문 】</p>
+                하늘처럼 높고 바다처럼 깊은 우리 <strong>천해연합(Cheonhae Union)</strong>은 서로의 독립된 인격과 가치를 보장하며 공동의 번영과 안녕을 실현하기 위하여 이 헌법을 제정한다.<br><br>
+                우리는 유구한 <strong>수청(水靑), 청록(靑鹿), 천해(天海)</strong>의 뿌리를 계승하고 미래의 도전을 공동으로 마주하는 사명에 입각하여, 정의와 신의로써 단결을 공고히 하고, 일체의 불필요한 대립과 갈등을 타파하며, 자율과 조화를 바탕으로 연합의 질서를 확고히 한다.<br><br>
+                이에 천해연합은 모든 영역에 있어서 각자의 잠재된 능력을 최고도로 발휘하게 하고, 자유와 권리에 따르는 책임과 의무를 완수하게 하여, 안으로는 구성원의 행복을 확보하고 밖으로는 연합의 위상을 드높일 것을 다짐하면서, 2026년 2월 26일 이 헌법을 제정한다.
+            </div>
+        </section>
+
+        <!-- 제1장 -->
+        <h2 class="chapter-title">제1장 총강</h2>
+        
+        <div class="article">
+            <span class="article-head">제1조 (국가 형태 및 주권)</span>
+            <span class="clause">① 천해연합은 주권자의 대등한 의사에 기초한 민주적 협의체이다.</span>
+            <span class="clause">② 천해연합의 주권은 모든 주권자에게 있고, 모든 권력은 주권자로부터 나온다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제2조 (주권자와 위원)</span>
+            <span class="clause">① 천해연합에 소속된 모든 사람을 <strong>주권자</strong>라 한다.</span>
+            <span class="clause">② 주권자 중 총회에 출석하여 의사결정권을 행사하는 자를 <strong>위원</strong>이라 한다.</span>
+            <span class="clause">③ 연합의 모든 결정권은 위원에게 있으며, 그 효력은 위원 간의 합의로부터 발생한다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제3조 (지위와 의무)</span>
+            <span class="clause">① 연합의 주권자가 되는 요건은 위원의 상호 승인으로 정한다.</span>
+            <span class="clause">② 연합은 주권자 개개인의 사생활과 명예를 보호할 신성한 의무를 진다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제4조 (목적과 원칙)</span>
+            <span class="clause">① 연합의 목적은 상호 이익의 극대화와 정신적 유대감의 지속에 둔다.</span>
+            <span class="clause">② 연합은 평화적 소통을 지향하며, 강압이나 독단적 결정에 의한 질서 형성을 부인한다.</span>
+            <span class="clause">③ 연합은 우리 가족의 평화를 지향하며, 이를 위한 구체적 방안을 수립하고 추진한다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제5조 (효력 및 대외 관계)</span>
+            <span class="clause">① 이 헌법에 의하여 합의된 규칙과 일반적으로 승인된 약속은 연합 내에서 최고의 효력을 가진다.</span>
+            <span class="clause">② 제3자와의 관계에 있어서도 연합의 대외적 지위는 주권자 공동의 이름으로 보장된다.</span>
+        </div>
+
+        <!-- 제2장 -->
+        <h2 class="chapter-title">제2장 주권자의 권리와 의무</h2>
+        
+        <div class="article">
+            <span class="article-head">제6조 (존엄과 평등)</span>
+            <span class="clause">① 모든 주권자는 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다.</span>
+            <span class="clause">② 모든 위원은 연합 내에서 평등하며, 어떠한 사유로도 차별받지 아니한다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제7조 (의사표현의 자유와 존중)</span>
+            <span class="clause">모든 주권자는 자신의 견해를 자유롭게 표명할 권리를 가진다. 다른 주권자는 이를 성실히 경청하고 존중할 의무를 진다.</span>
+        </div>
+
+        <!-- 제3장 -->
+        <h2 class="chapter-title">제3장 총회</h2>
+
+        <div class="article">
+            <span class="article-head">제8조 (총회의 지위)</span>
+            <span class="clause">입법권 및 연합의 주요 의사결정권은 천해연합 총회(이하 “총회”라 한다)에 속한다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제9조 (구성 및 최고직)</span>
+            <span class="clause">① 총회는 천해연합의 위원으로 구성한다.</span>
+            <span class="clause">② 위원은 대등한 권한을 가지며, 상호 존중을 바탕으로 협의에 임한다.</span>
+            <span class="clause">③ 총회는 위원 중 최고직인 <strong>천관(天官)</strong>과 <strong>해관(海官)</strong> 각 1인을 두며, 이들은 연합을 대표하고 총회를 주재한다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제10조 (총회의 절차)</span>
+            <span class="clause">총회는 특별한 사정이 없는 한 주 1회 개최를 원칙으로 하며, 다음 각 호의 순서에 따라 진행한다.</span>
+            <span class="clause">1. <strong>안건의 상정</strong>: 위원은 의안을 제출할 수 있으며, 총회 전 다른 위원에게 충분히 고지하여야 한다.</span>
+            <span class="clause">2. <strong>개회 및 기록</strong>: 위원의 출석으로 개회한다. 한 위원이 안건에 관하여 발언할 때, 다른 위원은 그 내용을 경청하며 정확하게 기록하여야 한다.</span>
+            <span class="clause">3. <strong>협의의 도출</strong>: 기록을 바탕으로 토론하여 위원 전원의 찬성으로 확정한다. 미합의 안건은 차기 총회에서 재논의한다.</span>
+            <span class="clause">4. <strong>가족 보고</strong>: 확정된 사항은 안건 제출 위원이 가족에게 지체 없이 보고하여 정당성을 확보하고 가족의 협의를 도출한다.</span>
+        </div>
+
+        <div class="article">
+            <span class="article-head">제11조 (기록 보존)</span>
+            <span class="clause">① 총회 기록물은 연합의 공식 기록으로 보존하며, 갈등 조정의 준거로 삼는다.</span>
+            <span class="clause">② 총회는 헌법에 저촉되지 아니하는 범위 내에서 내부 규율에 관한 규칙을 제정할 수 있다.</span>
+        </div>
+
+        <!-- 제4장 -->
+        <h2 class="chapter-title">제4장 헌법개정</h2>
+        <div class="article">
+            <span class="article-head">제12조 (개정 절차)</span>
+            <span class="clause">헌법 개정은 총회의 협의를 거쳐 위원 전원의 합의로 제안 및 확정된다.</span>
+        </div>
+
+        <!-- 부칙 -->
+        <h2 class="chapter-title">부 칙</h2>
+        <div class="article">
+            <span class="article-head">제13조 (시행일)</span>
+            <span class="clause">이 헌법은 공포한 날(2026년 2월 26일)로부터 즉시 효력을 발생한다.</span>
+        </div>
+        <div class="article">
+            <span class="article-head">제14조 (보직 임명)</span>
+            <span class="clause">이 헌법 공포와 동시에 위원 <strong>박민지</strong>를 <strong>천관(天官)</strong>으로, 위원 <strong>박명찬</strong>을 <strong>해관(海官)</strong>으로 임명한다.</span>
+        </div>
+
+        <!-- 서명 섹션 -->
+        <section class="signature-section">
+            <p class="text-xl mb-10 font-bold">2026년 2월 26일</p>
+            
+            <div class="signature-grid">
+                <div class="text-center">
+                    <p class="sig-label">천해연합 최고직</p>
+                    <div class="sig-name">
+                        <span>천관(天官) <strong>박민지</strong></span>
+                        <span class="sig-seal">민지</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="sig-label">천해연합 최고직</p>
+                    <div class="sig-name">
+                        <span>해관(海官) <strong>박명찬</strong></span>
+                        <span class="sig-seal">명찬</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
