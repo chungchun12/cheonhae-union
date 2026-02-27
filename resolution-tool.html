@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>천해연합 총회 의결서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif KR', serif;
+            background-color: #e5e7eb;
+            color: #111827;
+            padding: 1rem;
+        }
+        /* A4 사이즈 최적화 */
+        .resolution-paper {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 3rem 4rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid #d1d5db;
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .resolution-paper::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            font-size: 5rem;
+            font-weight: 700;
+            color: rgba(30, 58, 138, 0.025);
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 0;
+        }
+        .content-layer {
+            position: relative;
+            z-index: 10;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .doc-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            color: #111827;
+        }
+        .doc-subtitle {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1rem;
+            color: #4b5563;
+            letter-spacing: 0.1em;
+        }
+        .info-table {
+            width: 100%;
+            margin-bottom: 2rem;
+            border-top: 2px solid #111827;
+            border-bottom: 1px solid #d1d5db;
+        }
+        .info-table td {
+            padding: 0.6rem;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.95rem;
+        }
+        .label {
+            font-weight: 700;
+            width: 110px;
+            background-color: #f9fafb;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .editable-content {
+            flex-grow: 1;
+            min-height: 300px;
+            padding: 1.2rem;
+            border: 1px dashed #e5e7eb;
+            line-height: 1.8;
+            text-align: justify;
+            outline: none;
+            margin-bottom: 1.5rem;
+            background-color: #fff;
+        }
+        .editable-content:focus {
+            border-color: #3b82f6;
+            background-color: #f8fafc;
+        }
+        .legal-notice {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #1e3a8a;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            padding: 0.8rem;
+            background-color: #eff6ff;
+            border-radius: 4px;
+        }
+        .signature-section {
+            margin-top: auto;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .sig-box {
+            border: 1px solid #f3f4f6;
+            padding: 1.2rem;
+            border-radius: 4px;
+        }
+        .sig-label {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 0.4rem;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .sig-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sig-seal {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            border: 2px solid #dc2626;
+            color: #dc2626;
+            border-radius: 4px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: 700;
+            margin-left: 0.6rem;
+            font-size: 0.9rem;
+        }
+        .date-input {
+            border: none;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            width: 100%;
+            outline: none;
+            margin-bottom: 0.5rem;
+        }
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body { background: none; padding: 0; }
+            .resolution-paper { 
+                box-shadow: none; 
+                border: none; 
+                width: 210mm; 
+                height: 297mm; 
+                padding: 15mm 20mm; 
+            }
+            .editable-content { border: none; }
+            .no-print { display: none; }
+            .legal-notice { background-color: transparent; border: 1px solid #e5e7eb; }
+        }
+        .no-print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+<div class="resolution-paper">
+    <div class="watermark">TCA RESOLUTION</div>
+    
+    <div class="content-layer">
+        <header class="header-section">
+            <h1 class="doc-title">총회 의결서</h1>
+            <p class="doc-subtitle">CHEONHAE UNION GENERAL ASSEMBLY</p>
+        </header>
+
+        <table class="info-table">
+            <tr>
+                <td class="label">의결 번호</td>
+                <td contenteditable="true">제 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 호</td>
+                <td class="label">일시</td>
+                <td contenteditable="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 년 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 월 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 일</td>
+            </tr>
+            <tr>
+                <td class="label">참석 위원</td>
+                <td colspan="3" contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td class="label">의결 안건</td>
+                <td colspan="3" contenteditable="true"></td>
+            </tr>
+        </table>
+
+        <div class="font-bold mb-3 text-lg">【 의결 내용 】</div>
+        <div class="editable-content" contenteditable="true">
+            <p>1. </p>
+        </div>
+
+        <div class="legal-notice">
+            천해연합 헌법 제10조 제4호에 의거하여 본 의결 사항을 가족에게 보고함
+        </div>
+
+        <section class="signature-section">
+            <div class="date-input" contenteditable="true">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 년 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 월 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 일
+            </div>
+            <p class="text-xs text-gray-500 mb-6">위와 같이 의결함</p>
+            
+            <div class="signature-grid">
+                <div class="sig-box">
+                    <p class="sig-label">천해연합 최고직</p>
+                    <div class="sig-name">
+                        <span>천관(天官) <strong>박민지</strong></span>
+                        <span class="sig-seal">민지</span>
+                    </div>
+                </div>
+                <div class="sig-box">
+                    <p class="sig-label">천해연합 최고직</p>
+                    <div class="sig-name">
+                        <span>해관(海官) <strong>박명찬</strong></span>
+                        <span class="sig-seal">명찬</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<button class="no-print-btn no-print" onclick="window.print()">의결서 PDF 저장 / 인쇄</button>
+
+</body>
+</html>
